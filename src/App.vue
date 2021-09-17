@@ -1,9 +1,25 @@
 <template>
-<trading-vue :data="chart" :width="this.width" :height="this.height"
+<div class="main">
+<div class="my-chart">
+<trading-vue 
+        :width="this.width" :height="this.height"
+        :data="chart"
         :color-back="colors.colorBack"
         :color-grid="colors.colorGrid"
         :color-text="colors.colorText">
 </trading-vue>
+</div>
+
+<div class="my-chart">
+<trading-vue 
+        :width="this.width"  :height="this.height"
+        :data="chart" 
+        :color-back="colors.colorBack"
+        :color-grid="colors.colorGrid"
+        :color-text="colors.colorText">
+</trading-vue>
+</div>
+</div>
 </template>
 
 <script>
@@ -18,8 +34,8 @@ export default {
     },
     methods: {
         onResize() {
-            this.width = window.innerWidth
-            this.height = window.innerHeight
+            this.width = Math.round(window.innerWidth/2)
+            this.height = Math.round(window.innerHeight/2)
         }
     },
     mounted() {
@@ -32,8 +48,8 @@ export default {
     data() {
         return {
             chart: new DataCube(Data),
-            width: window.innerWidth,
-            height: window.innerHeight,
+            width: Math.round(window.innerWidth*1/2),
+            height: Math.round(window.innerHeight*1/2),
             colors: {
                 colorBack: '#fff',
                 colorGrid: '#eee',
@@ -47,9 +63,17 @@ export default {
 <style>
 html,
 body {
-    background-color: #000;
+    background-color: #fff;
     margin: 0;
-    padding: 0;
-    overflow: hidden;
+    padding: 0 0vw;
+    /* overflow: scroll; */
+}
+.my-chart{
+    width:60;
+}
+.main{
+    display: flex;
+    flex-direction: column;   
+    margin:0 auto;
 }
 </style>
