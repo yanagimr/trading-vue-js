@@ -176,21 +176,21 @@ export default {
             let f = t => this.layout.ti_map.smth2t(t)
             let dt = f(this.p2[0]) - f(this.p1[0])
             let tf = this.layout.ti_map.tf
-            // Bars count (through the candle index)
+            // bars count (through the candle index)
             let f2 = t => {
                 let c = this.layout.c_magnet(t)
                 let cn = this.layout.candles ||
                     this.layout.master_grid.candles
                 return cn.indexOf(c)
             }
-            // Bars count (and handling the negative values)
+            // bars count (and handling the negative values)
             let b = f2(this.p2[0]) - f2(this.p1[0])
             // Format time delta
             // Format time delta
             let dtstr = this.t2str(dt)
             let text = []
             if (this.price) text.push(`${d$}  (${p}%)`)
-            if (this.time) text.push(`${b} bars, ${dtstr}`)
+            if (this.time) text.push(`${b} bars111, ${dtstr}`)
             text = text.join('\n')
             // "Multiple" fillText
             let lines = text.split('\n')

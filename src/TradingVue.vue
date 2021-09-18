@@ -1,49 +1,50 @@
-
 <template>
     <!-- Main component  -->
-    <div class="trading-vue" v-bind:id="id"
-        @mousedown="mousedown" @mouseleave="mouseleave"
-         :style="{
-            color: this.chart_props.colors.text,
-            font: this.font_comp,
-            width: this.width+'px',
-            height: this.height+'px'}">
-        <toolbar v-if="toolbar"
-            ref="toolbar"
-            v-on:custom-event="custom_event"
-            v-bind="chart_props"
-            v-bind:config="chart_config">
-        </toolbar>
-        <widgets v-if="controllers.length"
-            ref="widgets"
-            :map="ws" :width="width" :height="height"
-            :tv="this" :dc="data">
-        </widgets>
-        <chart :key="reset"
-            ref="chart"
-            v-bind="chart_props"
-            v-bind:tv_id="id"
-            v-bind:config="chart_config"
-            v-on:custom-event="custom_event"
-            v-on:range-changed="range_changed"
-            v-on:legend-button-click="legend_button">
-        </chart>
-        <transition name="tvjs-drift">
-            <the-tip :data="tip" v-if="tip"
-                @remove-me="tip = null"/>
-        </transition>
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="trading-vue col-9" v-bind:id="id"
+            @mousedown="mousedown" @mouseleave="mouseleave"
+            :style="{
+                color: this.chart_props.colors.text,
+                font: this.font_comp,
+                width: this.width+'px',
+                height: this.height+'px'}">
+            <toolbar v-if="toolbar"
+                ref="toolbar"
+                v-on:custom-event="custom_event"
+                v-bind="chart_props"
+                v-bind:config="chart_config">
+            </toolbar>
+            <widgets v-if="controllers.length"
+                ref="widgets"
+                :map="ws" :width="width" :height="height"
+                :tv="this" :dc="data">
+            </widgets>
+            <chart :key="reset" class="chart"
+                ref="chart"
+                v-bind="chart_props"
+                v-bind:tv_id="id"
+                v-bind:config="chart_config"
+                v-on:custom-event="custom_event"
+                v-on:range-changed="range_changed"
+                v-on:legend-button-click="legend_button">
+            </chart>
+            <transition name="tvjs-drift">
+                <the-tip :data="tip" v-if="tip"
+                    @remove-me="tip = null"/>
+            </transition>
+        </div>
+        <!-- <div class="col-2"></div> -->
     </div>
 </template>
 
 <script>
-
 import Const from './stuff/constants.js'
 import Chart from './components/Chart.vue'
 import Toolbar from './components/Toolbar.vue'
 import Widgets from './components/Widgets.vue'
 import TheTip from './components/TheTip.vue'
 import XControl from './mixins/xcontrol.js'
-
 export default {
     name: 'TradingVue',
     components: {
@@ -204,7 +205,6 @@ export default {
                 skin: this.skin_proto,
                 timezone: this.$props.timezone
             }
-
             this.parse_colors(chart_props.colors)
             return chart_props
         },
@@ -292,7 +292,6 @@ export default {
             return this.$refs.chart.range
         },
         getCursor() {
-
             let cursor = this.$refs.chart.cursor
             if (this.chart_props.ib) {
                 const ti_map = this.$refs.chart.ti_map
@@ -356,8 +355,13 @@ export default {
         },
         mousedown() {
             this.$refs.chart.activated = true
+            // console.log('マウスダウン')
+            // var input = prompt('入力してください');
+            // console.log(input)
+
         },
         mouseleave() {
+            console.log('マウリーブ')
             this.$refs.chart.activated = false
         }
     }

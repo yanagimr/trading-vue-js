@@ -332,6 +332,9 @@ export default class DCEvents {
             rem()
             this.tv.$nextTick(() =>
                 this.build_tool(args[0], 'RangeTool:ShiftMode'))
+        } else if (this.sett.shift_measure && args[1].ctrlKey) {
+            console.log('おされました')
+            console.log(args[1].x)
         } else {
             rem()
         }
