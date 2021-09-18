@@ -1,4 +1,3 @@
-
 import Const from '../../stuff/constants.js'
 import Utils from '../../stuff/utils.js'
 
@@ -19,7 +18,6 @@ export default class Botbar {
     }
 
     update() {
-
         this.grid_0 = this.layout.grids[0]
 
         const width = this.layout.botbar.width
@@ -43,7 +41,6 @@ export default class Botbar {
         this.ctx.beginPath()
 
         for (var p of this.layout.botbar.xs) {
-
             let lbl = this.format_date(p)
 
             if (p[0] > width - sb) continue
@@ -83,6 +80,7 @@ export default class Botbar {
     panel() {
 
         let lbl = this.format_cursor_x()
+        console.log(lbl)
         this.ctx.fillStyle = this.$p.colors.panel
 
         let measure = this.ctx.measureText(lbl + '    ')

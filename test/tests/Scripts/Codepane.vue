@@ -110,7 +110,7 @@ export default {
                 hintOptions: {
                     completeSingle: false
                 },
-                scrollbarStyle: 'simple'
+                scrollbarstyle: 'simple'
             }
         }
     }

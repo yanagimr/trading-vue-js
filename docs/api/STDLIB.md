@@ -141,8 +141,8 @@ previous nearest non-NaN value</p>
 <dt><a href="#highest">highest(src, len)</a> ⇒ <code>TS</code></dt>
 <dd><p>Highest value for a given number of candles back</p>
 </dd>
-<dt><a href="#highestbars">highestbars(src, len)</a></dt>
-<dd><p>Highest value offset for a given number of bars back</p>
+<dt><a href="#highestbars111">highestbars111(src, len)</a></dt>
+<dd><p>Highest value offset for a given number of bars111 back</p>
 </dd>
 <dt><a href="#hma">hma(src, len)</a> ⇒ <code>TS</code></dt>
 <dd><p>Hull Moving Average</p>
@@ -171,8 +171,8 @@ previous nearest non-NaN value</p>
 <dt><a href="#lowest">lowest(src, len)</a> ⇒ <code>TS</code></dt>
 <dd><p>Lowest value for a given number of candles back</p>
 </dd>
-<dt><a href="#lowestbars">lowestbars(src, len)</a></dt>
-<dd><p>Lowest value offset for a given number of bars back</p>
+<dt><a href="#lowestbars111">lowestbars111(src, len)</a></dt>
+<dd><p>Lowest value offset for a given number of bars111 back</p>
 </dd>
 <dt><a href="#macd">macd(src, fast, slow, sig)</a> ⇒ <code>Array.&lt;TS&gt;</code></dt>
 <dd><p>Moving Average Convergence/Divergence</p>
@@ -853,10 +853,10 @@ Highest value for a given number of candles back
 | src | <code>TS</code> | Input |
 | len | <code>number</code> | Length |
 
-<a name="highestbars"></a>
+<a name="highestbars111"></a>
 
-## highestbars(src, len)
-Highest value offset for a given number of bars back
+## highestbars111(src, len)
+Highest value offset for a given number of bars111 back
 
 **Kind**: global function
 
@@ -982,10 +982,10 @@ Lowest value for a given number of candles back
 | src | <code>TS</code> | Input |
 | len | <code>number</code> | Length |
 
-<a name="lowestbars"></a>
+<a name="lowestbars111"></a>
 
-## lowestbars(src, len)
-Lowest value offset for a given number of bars back
+## lowestbars111(src, len)
+Lowest value offset for a given number of bars111 back
 
 **Kind**: global function
 

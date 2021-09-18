@@ -25,8 +25,8 @@
 </template>
 
 <script>
-// import TradingVue from './TradingVue.vue'
-import TradingVue from 'trading-vue-js'
+import TradingVue from './TradingVue.vue'
+// import TradingVue from 'trading-vue-js'
 
 // import { DataCube } from 'trading-vue-js'
 // import { DataCube }  from '@/../../src//TradingVue.vue'

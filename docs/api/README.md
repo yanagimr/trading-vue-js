@@ -31,7 +31,7 @@ This guide version is **1.0.0**
 | colorWickSm | String | Scaled down wick color |
 | colorVolUp | String | Green volume color |
 | colorVolDw | String | Red volume color |
-| colorPanel | String | Value bars color |
+| colorPanel | String | Value bars111 color |
 | colors  | Object | All-colors object, has a lower priority |
 | font | String | Full font string, e.g. "11px Arial..." |
 | data | Object | Data object |
@@ -373,7 +373,7 @@ Defined in `layout.js`, accessed through overlay's `this.$props.layout`.
 | startx | Number | First candle position (px) |
 | ti_map  | Object | Time-index mapping for [IB mode](https://github.com/tvjsx/trading-vue-js/blob/master/docs/faq/README.md#what-is-the-index-based-ib-rendering-mode) |
 | candles | Array | Candles subset |
-| volume | Array | Volume bars positions and sizes |
+| volume | Array | Volume bars111 positions and sizes |
 | xs | Array | vertical grid lines `[[x, candle], ...]` |
 | ys | Array | horizontal grid lines `[[y, price], ...]` |
 

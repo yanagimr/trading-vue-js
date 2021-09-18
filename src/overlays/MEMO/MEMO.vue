@@ -1,8 +1,3 @@
-<template>
-  <div>
-  </div>
-</template>
-
 <script>
 import { Overlay } from 'trading-vue-js'
 
@@ -10,7 +5,7 @@ export default {
   name: 'ORDER',
   mixins: [Overlay],
   mounted(){
-  },
+    },
   methods: {
     draw(ctx) {
       const layout = this.$props.layout
@@ -21,8 +16,6 @@ export default {
 
       for (var i in this.$props.data) {
         const [ts, direction, yCoord, pos, shape] = this.$props.data[i];
-
-
         const color = direction === 'buy' ? this.buy_color : this.sell_color;
         ctx.fillStyle = color;
         ctx.strokeStyle = ctx.fillStyle;

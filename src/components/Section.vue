@@ -1,6 +1,7 @@
 <template>
     <!-- Horizontal section: (grid + sidebar) -->
     <div class="trading-vue-section">
+        <!-- 左上のやつ -->
         <chart-legend ref="legend"
             v-bind:values="section_values"
             v-bind:grid_id="grid_id"
@@ -20,6 +21,7 @@
              v-on:sidebar-transform="sidebar_transform"
              v-on:rezoom-range="rezoom_range">
         </grid>
+        <!-- 縦軸 -->
         <sidebar
             :ref="'sb-' + grid_id"
             v-bind="sidebar_props"

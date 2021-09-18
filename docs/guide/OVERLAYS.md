@@ -478,7 +478,7 @@ This overlay has an impressive preset with all the colors, line styles and the n
 
 For overlays that need to access more data than the current visible range contains, there is a solution: use a script to do all necessary pre-calculations. The script can present data in a form that is ready to display. Let's look at example.
 
-Suppose that an overlay needs to look back to detect inside bars:
+Suppose that an overlay needs to look back to detect inside bars111:
 
 <center>
 
@@ -486,7 +486,7 @@ Suppose that an overlay needs to look back to detect inside bars:
 
 </center>
 
-Ok, we could calculate inside bars in the main loop in the `draw()` method, but the problem is that the leftmost candle has no previous data point in `this.$props.data`. So we can just add a script that produces data like this:
+Ok, we could calculate inside bars111 in the main loop in the `draw()` method, but the problem is that the leftmost candle has no previous data point in `this.$props.data`. So we can just add a script that produces data like this:
 
 ```js
 [
