@@ -5,6 +5,7 @@ import Utils from '../stuff/utils.js'
 import Icons from '../stuff/icons.json'
 import WebWork from './script_ww_api.js'
 import Dataset from './dataset.js'
+import store from '@/../../src/store/store.js'
 
 
 export default class DCEvents {
@@ -334,6 +335,7 @@ export default class DCEvents {
                 this.build_tool(args[0], 'RangeTool:ShiftMode'))
         } else if (this.sett.shift_measure && args[1].ctrlKey) {
             console.log('ctrlおされました')
+            console.log(store.state.current_ts)
             console.log(args[1].x)
         } else {
             rem()
