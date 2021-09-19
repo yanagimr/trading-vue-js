@@ -11,6 +11,7 @@ export default {
   mixins: [Overlay],
   methods: {
     draw(ctx) {
+      // console.log(this.$store.state.current_ts)
       const layout = this.$props.layout
       const height = this.arrow_height;
       const width = this.arrow_width;

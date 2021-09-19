@@ -55,6 +55,7 @@ export default {
           ctx.fill();
           ctx.fillText(direction, x, y + yOffset - 10);
         }
+
       }
     },
     use_for() {
@@ -66,6 +67,7 @@ export default {
         version: '1.0.0',
       }
     },
+    
   },
   // Define internal setting & constants here
   computed: {

@@ -1,5 +1,6 @@
 <template>
     <div>
+
         <div id="tvjs-header">
             <span id="overlays-lbl">Overlays</span>
             <std-input name="Overlay" type="select"
@@ -62,6 +63,7 @@ export default {
     },
     mounted() {
         console.log('mountedがよばれました')
+
         window.addEventListener('resize', this.onResize)
         this.$set(this, 'chart', Data)
         let q = this.win_query()

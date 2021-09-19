@@ -81,6 +81,7 @@ export default class Botbar {
 
         let lbl = this.format_cursor_x()
         console.log(lbl)
+        console.log(this)
         this.ctx.fillStyle = this.$p.colors.panel
 
         let measure = this.ctx.measureText(lbl + '    ')

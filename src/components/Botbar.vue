@@ -47,8 +47,9 @@ export default {
             deep: true
         },
         cursor: {
-            handler: function() { this.redraw() },
+            handler: function() { this.redraw()},
             deep: true
+            // console.log(this)},
         },
         rerender() {
             this.$nextTick(() => this.redraw())
