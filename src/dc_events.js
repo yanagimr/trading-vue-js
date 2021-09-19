@@ -310,8 +310,6 @@ export default class DCEvents {
     }
 
     grid_mousedown(args) {
-        console.log('a')
-        console.log(args)
         // TODO: tool state finished?
         this.object_selected([])
         // Remove the previous RangeTool

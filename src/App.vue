@@ -78,9 +78,6 @@ export default {
             return response.json()
         }).then(data => {
             console.log('test')
-            const Test = new DataCube(data)
-            console.log(Test)
-            console.log('test')
             this.$set(this, 'chart', new DataCube(data))
             this.$refs.tvjs.resetChart()
             window.data = data

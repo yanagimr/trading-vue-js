@@ -335,8 +335,16 @@ export default class DCEvents {
                 this.build_tool(args[0], 'RangeTool:ShiftMode'))
         } else if (this.sett.shift_measure && args[1].ctrlKey) {
             console.log('ctrlおされました')
-            console.log(store.state.current_ts)
-            console.log(args[1].x)
+            // console.log(store.state.current_ts)
+            // console.log(args[1].x)
+            data = [
+                store.state.current_ts,
+                'ダミー',
+                100000,
+            ];
+            //ファイルに値をいれたい
+            this.update_jsonfile(data)
+
         } else {
             rem()
         }
@@ -502,6 +510,10 @@ export default class DCEvents {
         let id = obj.id || `g${obj.grid_id}_${obj.layer_id}`
         let dcid = obj.uuid || this.gldc[id]
         return this.get_one(`${dcid}`)
+    }
+
+    update_jsonfile(array) {
+        
     }
 
 

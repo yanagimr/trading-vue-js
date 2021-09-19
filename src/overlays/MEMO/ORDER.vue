@@ -1,14 +1,16 @@
+<template>
+  <div>
+  </div>
+</template>
+
 <script>
 import { Overlay } from 'trading-vue-js'
 
 export default {
-  name: 'MEMO',
+  name: 'ORDER',
   mixins: [Overlay],
-  mounted(){
-    },
   methods: {
     draw(ctx) {
-      // console.log('draw関数が呼ばれました')
       // console.log(this.$store.state.current_ts)
       const layout = this.$props.layout
       const height = this.arrow_height;
@@ -17,53 +19,52 @@ export default {
       ctx.lineWidth = 1.5
 
       for (var i in this.$props.data) {
-        const [ts, direction, yCoord] = this.$props.data[i];
-        const color = this.buy_color;
+        const [ts, direction, yCoord, pos, shape] = this.$props.data[i];
+
+
+        const color = direction === 'buy' ? this.buy_color : this.sell_color;
         ctx.fillStyle = color;
-        // ctx.strokeStyle = ctx.fillStyle;
+        ctx.strokeStyle = ctx.fillStyle;
         ctx.font = '16px Arial';
         ctx.textAlign = 'center';
         ctx.beginPath();
         let x = layout.t2screen(ts);
-        let y = layout.$2screen(yCoord) - 100;
+        let y = layout.$2screen(yCoord);
         const halfSize = width / 2;
 
-        // if (pos === 'above') {
+        if (pos === 'above') {
           yOffset *= -1;
 
           // Top left point
-          ctx.moveTo(x, 0);
+          ctx.moveTo(x - halfSize, y + yOffset);
           // Top right point
-          ctx.lineTo(x, 1200);
+          ctx.lineTo(x + halfSize, y + yOffset);
           // Bottom middle point
-          ctx.lineTo(x+2, 1200);
-          ctx.lineTo(x+2,0);
+          ctx.lineTo(x, y + yOffset + height);
           ctx.closePath();
           ctx.stroke();
           ctx.fill();
-          // ctx.fillText(direction, x, y + yOffset - 10);
-        // }
+          ctx.fillText(direction, x, y + yOffset - 10);
+        }
 
-        // if (pos === 'below') {
-        //   yOffset = Math.abs(yOffset);
+        if (pos === 'below') {
+          yOffset = Math.abs(yOffset);
 
-        //   // Top left point
-        //   ctx.moveTo(x - halfSize, y + yOffset + height);
-        //   // Top right point
-        //   ctx.lineTo(x + halfSize, y + yOffset + height);
-        //   // Bottom middle point
-        //   ctx.lineTo(x, y + yOffset);
-        //   ctx.closePath();
-        //   ctx.stroke();
-        //   ctx.fill();
-        //   ctx.fillText(direction, x, y + yOffset - 10);
-        // }
-
+          // Top left point
+          ctx.moveTo(x - halfSize, y + yOffset + height);
+          // Top right point
+          ctx.lineTo(x + halfSize, y + yOffset + height);
+          // Bottom middle point
+          ctx.lineTo(x, y + yOffset);
+          ctx.closePath();
+          ctx.stroke();
+          ctx.fill();
+          ctx.fillText(direction, x, y + yOffset - 10);
+        }
       }
     },
     use_for() {
-      return ['MEMO']
-      // return ['MEMO','ORDER']
+      return ['Order']
     },
     meta_info() {
       return {
@@ -71,7 +72,6 @@ export default {
         version: '1.0.0',
       }
     },
-    
   },
   // Define internal setting & constants here
   computed: {
@@ -79,10 +79,10 @@ export default {
       return this.$props.settings
     },
     buy_color() {
-      return this.sett['buyColor'] || '#fff' // default value
+      return this.sett['buyColor'] || '#bfff00' // default value
     },
     sell_color() {
-      return this.sett['sellColor'] || '#fff'
+      return this.sett['sellColor'] || '#ec4662'
     },
     arrow_width() {
       return this.sett['arrowWidth'] || 15
