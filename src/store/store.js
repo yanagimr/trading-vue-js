@@ -5,8 +5,13 @@ Vue.use(Vuex);
 
 const store = new Vuex.Store({
     state: {
-    current_ts: -1,
-  }
+        current_ts: -1,
+    },
+    mutations: {
+        update_current_ts(state,params) {
+            state.current_ts = params.current_ts;
+        }
+    }
 })
     
 export default store;
