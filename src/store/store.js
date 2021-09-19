@@ -8,8 +8,8 @@ const store = new Vuex.Store({
         current_ts: -1,
     },
     mutations: {
-        update_current_ts(state,params) {
-            state.current_ts = params.current_ts;
+        update_current_ts(state, params) {
+            state.current_ts = params;
         }
     }
 })
