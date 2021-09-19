@@ -338,10 +338,11 @@ export default class DCEvents {
             console.log('ctrlおされました')
             // console.log(store.state.current_ts)
             // console.log(args[1].x)
+            let incident = prompt('出来事を入力してください');
             data = [
                 store.state.current_ts,
-                'ダミー',
-                100000,
+                incident,
+                100000, //ダミー
             ];
             //ファイルに値をいれたい
             this.update_jsonfile(data)
@@ -515,7 +516,7 @@ export default class DCEvents {
 
     update_jsonfile(array) {
         //ここでstateを変更する
-        console.log(store.state.MEMO.onchart[0].data[3]);
+        // console.log(store.state.MEMO.onchart[0].data[3]);
         store.commit('update_MEMO',array)
     }
 

@@ -14,7 +14,12 @@ const store = new Vuex.Store({
             state.current_ts = params;
         },
         update_MEMO(state, param) {
-            console.log(param)
+            // console.log('これとこれを結合')
+            // console.log(state.MEMO.onchart[0].data)
+            // console.log(param)
+            // console.log('これとこれを結合')
+            state.MEMO.onchart[0].data.push(param)
+            // console.log(state.MEMO.onchart[0].data)
         }
     }
 })
