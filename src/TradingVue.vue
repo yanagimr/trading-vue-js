@@ -361,7 +361,7 @@ export default {
 
         },
         mouseleave() {
-            console.log('マウリーブ')
+            // console.log('マウリーブ')
             this.$refs.chart.activated = false
         }
     }

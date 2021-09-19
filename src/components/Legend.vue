@@ -20,6 +20,7 @@
             {{(common.meta.last || [])[4]}}
         </span>
     </div>
+
     <div class="t-vue-ind" v-for="ind in this.indicators">
         <span class="t-vue-iname">{{ind.name}}</span>
         <button-group
@@ -39,7 +40,7 @@
                 {{v.value}}
             </span>
         </span>
-        <span v-if="ind.unk" class="t-vue-unknown">
+        <span memo_打った-if="ind.unk" class="t-vue-unknown">
             (Unknown type)
         </span>
         <transition name="tvjs-appear">
@@ -86,10 +87,12 @@ export default {
         },
         // TODO: add support for { grid: { id : N }}
         indicators() {
+            // const values = this.$store.state.MEMO.onchart[0].data
             const values = this.$props.values
+            // console.log('props'+JSON.stringify(this.$props.values))
             const f = this.format
             var types = {}
-
+            
             return this.json_data.filter(
                 x => x.settings.legend !== false && !x.main
             ).map(x => {
