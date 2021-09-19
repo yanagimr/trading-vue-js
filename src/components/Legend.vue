@@ -40,7 +40,7 @@
                 {{v.value}}
             </span>
         </span>
-        <span memo_打った-if="ind.unk" class="t-vue-unknown">
+        <span v-if="ind.unk" class="t-vue-unknown">
             (Unknown type)
         </span>
         <transition name="tvjs-appear">
@@ -92,7 +92,9 @@ export default {
             // console.log('props'+JSON.stringify(this.$props.values))
             const f = this.format
             var types = {}
-            
+            this.json_data[0].data = this.$store.state.MEMO.onchart[0].data
+            // console.log(this.$store.state.MEMO.onchart[0].data)
+            // console.log(this.json_data[0].data) //json
             return this.json_data.filter(
                 x => x.settings.legend !== false && !x.main
             ).map(x => {

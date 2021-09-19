@@ -130,8 +130,8 @@ export default {
         section_values() {
             const id = this.$props.grid_id
             let p = Object.assign({}, this.$props.common)
-            // console.log('p'+JSON.stringify(this.$props.common))
-            console.log('p'+JSON.stringify(p.cursor))
+            // console.log('p'+JSON.stringify(this.$props.common.cursor))
+            // console.log('p'+JSON.stringify(p.cursor))
             p.width = p.layout.grids[id].width
             return p.cursor.values[id]
         },

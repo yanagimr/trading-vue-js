@@ -4,7 +4,7 @@
         <keyboard ref="keyboard"></keyboard>
         <grid-section v-for="(grid, i) in this._layout.grids"
             :key="grid.id" ref="sec"
-            v-bind:common="section_props(i)"
+            v-bind:common="section_props(i)" 
             v-bind:grid_id="i"
             v-on:register-kb-listener="register_kb"
             v-on:remove-kb-listener="remove_kb"
@@ -196,6 +196,8 @@ export default {
             })
         },
         section_props(i) {
+            console.log('aaa'+JSON.stringify(this.main_section))
+            // console.log('bbb'+JSON.stringify(this.sub_section))
             return i === 0 ?
                 this.main_section : this.sub_section
         },

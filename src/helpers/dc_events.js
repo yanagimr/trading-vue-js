@@ -342,7 +342,6 @@ export default class DCEvents {
             data = [
                 store.state.current_ts,
                 incident,
-                100000, //ダミー
             ];
             //ファイルに値をいれたい
             this.update_jsonfile(data)
