@@ -156,6 +156,11 @@ export default class Botbar {
         return `${date}  ${time}`
 
     }
+    current_ts() {
+
+        return this.$p.cursor.t
+
+    }
 
     // Highlights the begining of a time interval
     // TODO: improve. Problem: let's say we have a new month,

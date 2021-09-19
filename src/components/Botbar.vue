@@ -49,8 +49,7 @@ export default {
         cursor: {
             handler: function() { 
                 this.redraw()
-                // console.log(this.$store.state.current_ts)
-                let updated_current_ts = this.renderer.format_cursor_x();
+                let updated_current_ts = this.renderer.current_ts();
                 this.$store.commit("update_current_ts",updated_current_ts)
                 },
             deep: true
