@@ -6,7 +6,8 @@ import Icons from '../stuff/icons.json'
 import WebWork from './script_ww_api.js'
 import Dataset from './dataset.js'
 import store from '@/../../src/store/store.js'
-
+// import fs from 'fs'
+// const fs = require('fs');
 
 export default class DCEvents {
 
@@ -513,7 +514,9 @@ export default class DCEvents {
     }
 
     update_jsonfile(array) {
-        
+        //ここでstateを変更する
+        console.log(store.state.MEMO.onchart[0].data[3]);
+        store.commit('update_MEMO',array)
     }
 
 

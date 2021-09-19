@@ -2,6 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import store from './store/store.js'
 
+
 // MOB_DEBUG=true npm run test - Enables mobile debugging
 // (sending console output to the webpack terminal)
 if (MOB_DEBUG) {
